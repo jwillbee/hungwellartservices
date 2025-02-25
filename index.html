@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="scene-container"></div>  <div id="menu-tray">
+        <ul>
+            <li id="services-menu">Services
+                <ul id="services-submenu">
+                    <li>Service 1</li>
+                    <li>Service 2</li>
+                    <li>Service 3</li>
+                    <li>Service 4</li>
+                    <li>Service 5</li>
+                    <li>Service 6</li>
+                    <li>Service 7</li>
+                    <li>Service 8</li>
+                </ul>
+            </li>
+            <li id="about-us-menu">About Us</li>
+            <li id="contact-us-menu">Contact Us</li>
+        </ul>
+    </div>
+
+    <div id="card-container">
+        <div id="services-card" class="card">
+            <h2>Services</h2>
+            <p>Content for services will go here.</p>
+        </div>
+        <div id="about-us-card" class="card">
+            <h2>About Us</h2>
+            <p>Content for about us will go here.</p>
+        </div>
+        <div id="contact-us-card" class="card">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Your Name" required><br>
+                <input type="tel" id="phone" placeholder="Your Phone Number"><br>
+                <input type="email" id="email" placeholder="Your Email" required><br>
+                <select id="service-type">
+                    <option value="">Select a Service</option>
+                    <option value="service1">Service Type 1</option>
+                    <option value="service2">Service Type 2</option>
+                    </select><br>
+                <textarea id="notes" placeholder="Additional Notes"></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>  <script type="module" src="script.js"></script>
+</body>
+</html>
