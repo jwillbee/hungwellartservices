@@ -1,23 +1,31 @@
 body {
     margin: 0;
-    overflow: hidden; /* Prevent scrollbars for 3D scene */
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
     font-family: sans-serif;
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack elements vertically */
-    min-height: 100vh; /* Ensure full viewport height */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif; /* Example font */
+    background-color: #f0f0f0; /* Example background color */
 }
 
 #scene-container {
-    flex-grow: 1; /* Allow 3D scene to take up available space */
-    position: relative; /* For positioning the logo */
+    flex-grow: 1;
+    position: relative;
+    height: 100vh; /* Set initial height to full viewport height */
+    background: linear-gradient(to bottom, #87CEEB, #E0F2F7); /* Example gradient background */
 }
 
 #menu-tray {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     color: white;
-    padding: 10px;
-    position: relative; /* For submenu positioning */
-    z-index: 2; /* Ensure menu is above 3D scene */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 #menu-tray ul {
@@ -25,17 +33,19 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: center; /* Center the menu items */
 }
 
 #menu-tray li {
-    margin-right: 20px;
+    margin: 0 20px;
+    font-size: 1.2em;
     cursor: pointer;
 }
 
 #services-submenu {
-    display: none; /* Initially hidden */
+    display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 15px); /* Position below the menu tray */
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
@@ -45,6 +55,7 @@ body {
 
 #services-submenu li {
     margin: 5px 0;
+    cursor: pointer;
 }
 
 .card {
@@ -56,15 +67,69 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    display: none; /* Initially hidden */
-    z-index: 3; /* Ensure cards are above menu and 3D scene */
+    display: none;
+    z-index: 3;
+    max-height: 90vh; /* Set maximum card height to prevent overflow */
+    overflow-y: auto; /* Enable scrolling within the card */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#contact-form input, #contact-form textarea, #contact-form select {
+.card h2 {
+    color: #333;
+}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form select {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 8px;
 }
 
-/* ... (More styles as needed) ... */
+#contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent; /* Make it transparent */
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #555; /* Example color */
+}
+
+#content-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    #menu-tray li {
+        font-size: 1em;
+        margin: 0 10px;
+    }
+
+    #menu-tray ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #services-submenu {
+        top: 100%;
+    }
+}
+
+/* Add any other styles you need here */
