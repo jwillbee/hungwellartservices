@@ -1,23 +1,23 @@
 body {
     margin: 0;
-    overflow-x: hidden; /* Prevent horizontal scrollbars */
+    overflow-x: hidden;
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Arial', sans-serif; /* Example font */
-    background-color: #f0f0f0; /* Example background color */
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
 }
 
 #scene-container {
     flex-grow: 1;
     position: relative;
-    height: 100vh; /* Set initial height to full viewport height */
-    background: linear-gradient(to bottom, #87CEEB, #E0F2F7); /* Example gradient background */
+    height: 100vh;
+    background: linear-gradient(to bottom, #87CEEB, #E0F2F7);
 }
 
 #menu-tray {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     width: 100%;
     position: fixed;
@@ -33,7 +33,7 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; /* Center the menu items */
+    justify-content: center;
 }
 
 #menu-tray li {
@@ -45,7 +45,7 @@ body {
 #services-submenu {
     display: none;
     position: absolute;
-    top: 100%; /* Correct submenu positioning */
+    top: 100%;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
@@ -69,8 +69,8 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     display: none;
     z-index: 3;
-    max-height: 90vh; /* Set maximum card height to prevent overflow */
-    overflow-y: auto; /* Enable scrolling within the card */
+    max-height: 90vh;
+    overflow-y: auto;
     background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -103,11 +103,11 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: transparent; /* Make it transparent */
+    background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: 1.2em;
-    color: #555; /* Example color */
+    color: #555;
 }
 
 #content-area {
@@ -131,5 +131,3 @@ body {
         top: 100%;
     }
 }
-
-/* Add any other styles you need here */
