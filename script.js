@@ -37,4 +37,40 @@ function animate() {
 
 animate();
 
-// ... (Rest of the JavaScript code in next part) ...
+const servicesMenu = document.getElementById('services-menu');
+const servicesSubmenu = document.getElementById('services-submenu');
+const aboutUsMenu = document.getElementById('about-us-menu');
+const contactUsMenu = document.getElementById('contact-us-menu');
+
+const servicesCard = document.getElementById('services-card');
+const aboutUsCard = document.getElementById('about-us-card');
+const contactUsCard = document.getElementById('contact-us-card');
+
+// Menu Interactions
+servicesMenu.addEventListener('click', () => {
+    servicesSubmenu.style.display = servicesSubmenu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Card Display Logic (Example for Services)
+servicesSubmenu.querySelectorAll('li').forEach(item => {
+    item.addEventListener('click', () => {
+        servicesSubmenu.style.display = 'none'; // Close submenu
+        showCard(servicesCard);
+    });
+});
+
+aboutUsMenu.addEventListener('click', () => {
+    showCard(aboutUsCard);
+});
+
+contactUsMenu.addEventListener('click', () => {
+    showCard(contactUsCard);
+});
+
+
+function showCard(card) {
+    // Basic show animation (improve as needed)
+    card.style.display = 'block';
+    card.style.opacity = 0;
+    setTimeout(() => {
+        card.
