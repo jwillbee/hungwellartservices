@@ -74,3 +74,87 @@ function showCard(card) {
     card.style.opacity = 0;
     setTimeout(() => {
         card.
+
+// ... (Previous code) ...
+
+function showCard(card) {
+    // Basic show animation (improve as needed)
+    card.style.display = 'block';
+    card.style.opacity = 0;
+    setTimeout(() => {
+        card.style.opacity = 1; // Fade in
+    }, 50); // Small delay
+
+    // Hide other cards
+    hideOtherCards(card);
+}
+
+function hideOtherCards(currentCard) {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        if (card !== currentCard) {
+            card.style.display = 'none';
+        }
+    });
+}
+
+
+// Contact Form Submission (Placeholder)
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent actual form submission
+
+    // Get form data (You'll need to handle this properly)
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const serviceType = document.getElementById('service-type').value;
+    const notes = document.getElementById('notes').value;
+
+    // Placeholder for sending email (Replace with actual email sending logic)
+    console.log("Form submitted:", { name, phone, email, serviceType, notes });
+    alert("Form submitted"); // Replace with a more user-friendly message
+
+    // Reset the form after "submission"
+    contactForm.reset();
+
+    // Hide the contact card after "submission"
+    contactUsCard.style.display = 'none';
+});
+
+
+// Hide Card Function (To hide the card when clicking outside or a close button)
+function hideCard(card) {
+  card.style.display = 'none';
+}
+
+// Add event listeners to close cards when clicking outside (mobile-friendly)
+document.addEventListener('click', (event) => {
+  const cardContainer = document.getElementById('card-container');
+  if (!cardContainer.contains(event.target)) { // Clicked outside the card
+    document.querySelectorAll('.card').forEach(card => {
+        hideCard(card);
+    });
+  }
+});
+
+
+// Add close buttons to the cards (optional, but good UX):
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+  const closeButton = document.createElement('button'); // Create a close button
+  closeButton.textContent = 'Close';
+  closeButton.classList.add('close-button'); // Add a class for styling (if needed)
+  closeButton.addEventListener('click', () => {
+    hideCard(card);
+  });
+  card.appendChild(closeButton); // Add the button to the card
+});
+
+// CSS for the close button (add to your styles.css):
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* Add more styles as needed */
+}
