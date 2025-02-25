@@ -106,7 +106,7 @@ function hideCard(card) {
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    // ... (Your form submission logic)
+    // ... (Your form submission logic here) ...
     contactForm.reset();
     hideCard(contactUsCard); // Hide after "submission"
 });
