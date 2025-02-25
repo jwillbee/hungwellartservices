@@ -45,7 +45,7 @@ body {
 #services-submenu {
     display: none;
     position: absolute;
-    top: calc(100% + 15px); /* Position below the menu tray */
+    top: 100%; /* Correct submenu positioning */
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
