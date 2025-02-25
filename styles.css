@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars for 3D scene */
+    font-family: sans-serif;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+#scene-container {
+    flex-grow: 1; /* Allow 3D scene to take up available space */
+    position: relative; /* For positioning the logo */
+}
+
+#menu-tray {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    position: relative; /* For submenu positioning */
+    z-index: 2; /* Ensure menu is above 3D scene */
+}
+
+#menu-tray ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#menu-tray li {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#services-submenu {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+}
+
+#services-submenu li {
+    margin: 5px 0;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: none; /* Initially hidden */
+    z-index: 3; /* Ensure cards are above menu and 3D scene */
+}
+
+#contact-form input, #contact-form textarea, #contact-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* ... (More styles as needed) ... */
