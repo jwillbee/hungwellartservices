@@ -74,14 +74,30 @@ body {
 }
 
 /* Card Styling */
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 60px; /* add padding to the top of the container to prevent overlap */
+}
+
 .card {
     display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative; /* Change to relative positioning */
+    top: auto; /* reset top value */
+    left: auto; /* reset left value */
+    transform: none; /* remove transform */
     background: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Adjust width for mobile */
+    margin: 10px; /* Add margin between cards */
+    max-width: 600px; /* added max width to the cards, so they dont take up the entire screen on larger devices*/
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 45%; /* Adjust width for larger screens */
+    }
 }
