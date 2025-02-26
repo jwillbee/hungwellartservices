@@ -5,10 +5,11 @@ const aboutUsMenu = document.getElementById('about-us-menu');
 const contactUsMenu = document.getElementById('contact-us-menu');
 const cardContainer = document.getElementById('card-container');
 
-// Toggle Services Submenu
+// Toggle Services Submenu visibility on Services Menu click
 servicesMenu.addEventListener('click', (event) => {
-    event.stopPropagation();  // Prevent click from propagating to document
-    servicesSubmenu.classList.toggle('active'); // Toggle the submenu visibility
+    event.stopPropagation(); // Prevent click from propagating to document
+    // Toggle the submenu visibility
+    servicesSubmenu.classList.toggle('active'); 
 });
 
 // Close submenu when clicking outside
@@ -50,9 +51,6 @@ function showCard(cardId) {
     if (selectedCard) {
         selectedCard.style.display = 'block';
     }
-
-    // Close the submenu after card is shown
-    servicesSubmenu.classList.remove('active');
 }
 
 // Close cards when clicking outside
