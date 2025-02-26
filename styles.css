@@ -60,20 +60,6 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-#services-submenu.active {
-    display: block; /* Display when active */
-}
-
-#services-submenu li {
-    padding: 10px;
-    color: white;
-    cursor: pointer;
-}
-
-#services-submenu li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
 /* Card Styling */
 .card {
     display: none; /* Initially hidden */
