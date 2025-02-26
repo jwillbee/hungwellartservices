@@ -1,6 +1,6 @@
 // Select DOM Elements
 const servicesMenu = document.getElementById('services-menu');
-const servicesSubmenu = document.getElementById('services-submenu');
+//const servicesSubmenu = document.getElementById('services-submenu');
 const aboutUsMenu = document.getElementById('about-us-menu');
 const contactUsMenu = document.getElementById('contact-us-menu');
 const cardContainer = document.getElementById('card-container');
