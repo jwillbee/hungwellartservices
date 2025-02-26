@@ -9,7 +9,7 @@ const cardContainer = document.getElementById('card-container');
 servicesMenu.addEventListener('click', (event) => {
     event.stopPropagation(); // Prevent click from propagating to document
     // Toggle the submenu visibility
-    servicesSubmenu.classList.toggle('active'); 
+    servicesSubmenu.classList.toggle('active');
 });
 
 // Close submenu when clicking outside
@@ -62,7 +62,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// Handle Contact Form Submission (Mock)
+// Handle Contact Form Submission (mock)
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (event) => {
