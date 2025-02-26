@@ -78,7 +78,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 60px; /* add padding to the top of the container to prevent overlap */
+    /* padding-top: 60px; Remove or adjust this line */
 }
 
 .card {
