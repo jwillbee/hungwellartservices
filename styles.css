@@ -43,8 +43,20 @@ body {
 }
 
 /* Submenu */
+#services-submenu {
+    display: none; /* Initially hide the submenu */
+    position: absolute;
+    top: 40px; /* Align vertically below the menu item */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0;
+    list-style: none;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
 #services-submenu.active {
-    display: block; /* Show the submenu when it has the 'active' class */
+    display: none; /* Show the submenu when it has the 'active' class */
 }
 
 #services-submenu li {
