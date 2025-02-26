@@ -36,75 +36,60 @@ const servicesSubmenu = document.getElementById('services-submenu');
 const aboutUsMenu = document.getElementById('about-us-menu');
 const contactUsMenu = document.getElementById('contact-us-menu');
 
-const servicesCard = document.getElementById('services-card');
 const aboutUsCard = document.getElementById('about-us-card');
 const contactUsCard = document.getElementById('contact-us-card');
 
-const menuTray = document.getElementById('menu-tray');
+const cardContainer = document.getElementById('card-container');
 
-// Toggle Submenu
+// Toggle Services Submenu
 servicesMenu.addEventListener('click', (event) => {
     event.stopPropagation();
     servicesSubmenu.classList.toggle('active');
 });
 
-// Hide submenu when clicking outside
+// Close submenu when clicking outside
 document.addEventListener('click', (event) => {
     if (!servicesMenu.contains(event.target) && !servicesSubmenu.contains(event.target)) {
         servicesSubmenu.classList.remove('active');
     }
 });
 
-// Create service sub-cards
-const serviceSubCards = [];
+// Handle Card Display for Services
 const serviceSubmenuItems = servicesSubmenu.querySelectorAll('li');
-serviceSubmenuItems.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.classList.add('card', 'service-sub-card');
-    card.id = `service-sub-card-${index + 1}`;
-    card.innerHTML = `<h2>${item.textContent}</h2><p>Placeholder content for ${item.textContent}.</p>`;
-    document.getElementById('card-container').appendChild(card);
-    serviceSubCards.push(card);
 
+serviceSubmenuItems.forEach((item, index) => {
     item.addEventListener('click', (event) => {
         event.stopPropagation();
         servicesSubmenu.classList.remove('active');
-        showCard(serviceSubCards[index]);
+        showCard(`service-card-${index + 1}`);
     });
 });
 
-// Open cards
+// Open About Us and Contact Us Cards
 aboutUsMenu.addEventListener('click', (event) => {
     event.stopPropagation();
-    showCard(aboutUsCard);
+    showCard('about-us-card');
 });
 
 contactUsMenu.addEventListener('click', (event) => {
     event.stopPropagation();
-    showCard(contactUsCard);
+    showCard('contact-us-card');
 });
 
-// Card Display Functions
-function showCard(card) {
-    card.style.display = 'block';
-    card.style.opacity = 0;
-    setTimeout(() => {
-        card.style.opacity = 1;
-    }, 50);
-    hideOtherCards(card);
-}
-
-function hideOtherCards(currentCard) {
+// Show Card Function
+function showCard(cardId) {
     document.querySelectorAll('.card').forEach(card => {
-        if (card !== currentCard) {
-            card.style.display = 'none';
-        }
+        card.style.display = 'none';
     });
+    const selectedCard = document.getElementById(cardId);
+    if (selectedCard) {
+        selectedCard.style.display = 'block';
+    }
 }
 
-// Close Cards when clicking outside
+// Close cards when clicking outside
 document.addEventListener('click', (event) => {
-    if (!menuTray.contains(event.target)) {
+    if (!cardContainer.contains(event.target)) {
         document.querySelectorAll('.card').forEach(card => {
             card.style.display = 'none';
         });
