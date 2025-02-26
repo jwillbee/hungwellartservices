@@ -46,7 +46,7 @@ body {
 #services-submenu {
     display: none; /* Initially hide the submenu */
     position: absolute;
-    top: 40px;
+    top: 40px; /* Align vertically below the menu item */
     left: 0;
     background-color: rgba(0, 0, 0, 0.9);
     padding: 0;
