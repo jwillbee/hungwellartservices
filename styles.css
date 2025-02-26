@@ -102,22 +102,3 @@ body {
     font-size: 1.2em;
     color: #555;
 }
-
-/* Mobile View Adjustments */
-@media (max-width: 768px) {
-    #menu-tray ul {
-        flex-direction: column; /* Stack items vertically on mobile */
-        align-items: center;
-    }
-
-    #menu-tray ul li {
-        font-size: 1em;
-        padding: 10px;
-    }
-
-    #services-submenu {
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%); /* Center for mobile as well */
-    }
-}
