@@ -59,16 +59,6 @@ body {
     display: block; /* Show the submenu when it has the 'active' class */
 }
 
-#services-submenu li {
-    padding: 10px;
-    color: white;
-    cursor: pointer;
-}
-
-#services-submenu li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
 /* Card Styling */
 .card {
     display: none;
