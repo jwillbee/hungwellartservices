@@ -31,17 +31,6 @@ body {
     display: flex;
 }
 
-#menu-tray ul li {
-    position: relative;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#menu-tray ul li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
 /* Submenu */
 #services-submenu {
     display: none; /* Initially hide the submenu */
@@ -57,6 +46,16 @@ body {
 
 #services-submenu.active {
     display: block; /* Show the submenu when it has the 'active' class */
+}
+
+#services-submenu li {
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+#services-submenu li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Card Styling */
