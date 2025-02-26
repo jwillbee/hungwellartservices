@@ -42,17 +42,6 @@ const servicesCard = document.getElementById('services-card');
 const aboutUsCard = document.getElementById('about-us-card');
 const contactUsCard = document.getElementById('contact-us-card');
 
-// Create service sub-cards
-const serviceSubCards = [];
-for (let i = 1; i <= 8; i++) {
-    const card = document.createElement('div');
-    card.classList.add('card', 'service-sub-card');
-    card.id = `service-sub-card-${i}`;
-    card.innerHTML = `<h2>Service ${i}</h2><p>Placeholder content for Service ${i}.</p>`;
-    document.getElementById('card-container').appendChild(card);
-    serviceSubCards.push(card);
-}
-
 // Dynamic Margin for Content Area
 const menuTray = document.getElementById('menu-tray');
 const menuHeight = menuTray.offsetHeight;
@@ -72,13 +61,28 @@ servicesMenu.addEventListener('click', (event) => {
     servicesSubmenu.style.display = servicesSubmenu.style.display === 'block' ? 'none' : 'block';
 });
 
-servicesSubmenu.querySelectorAll('li').forEach((item, index) => {
-    item.addEventListener('click', (event) => {
-        event.stopPropagation();
-        servicesSubmenu.style.display = 'none';
-        showCard(serviceSubCards[index]);
+// Create service sub-cards and link them to submenu items
+const serviceSubCards = [];
+function createServiceSubCards() {
+    const serviceSubmenuItems = servicesSubmenu.querySelectorAll('li');
+    serviceSubmenuItems.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.classList.add('card', 'service-sub-card');
+        card.id = `service-sub-card-${index + 1}`;
+        card.innerHTML = `<h2>${item.textContent}</h2><p>Placeholder content for ${item.textContent}.</p>`;
+        document.getElementById('card-container').appendChild(card);
+        serviceSubCards.push(card);
+
+        item.addEventListener('click', (event) => {
+            event.stopPropagation();
+            servicesSubmenu.style.display = 'none';
+            showCard(serviceSubCards[index]);
+        });
     });
-});
+}
+
+// Call the function to create cards after the submenu is available
+createServiceSubCards();
 
 aboutUsMenu.addEventListener('click', (event) => {
     event.stopPropagation();
