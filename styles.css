@@ -61,7 +61,7 @@ body {
 }
 
 #services-submenu li {
-    display: none;
+    display: block;
     padding: 10px;
     color: white;
     cursor: pointer;
