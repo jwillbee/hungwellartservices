@@ -6,18 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardContainer = document.getElementById('card-container');
 
     // Ensure submenu is hidden on load
-    servicesSubmenu.classList.remove('active');
+    servicesSubmenu.style.display = 'none';
 
     // Toggle Services Submenu visibility on Services Menu click
     servicesMenu.addEventListener('click', (event) => {
         event.stopPropagation(); // Prevent event from propagating
-        servicesSubmenu.classList.toggle('active'); // Toggle visibility
+        if (servicesSubmenu.style.display === 'none') {
+            servicesSubmenu.style.display = 'block';
+        } else {
+            servicesSubmenu.style.display = 'none';
+        }
     });
 
     // Close submenu when clicking outside
     document.addEventListener('click', (event) => {
         if (!servicesMenu.contains(event.target) && !servicesSubmenu.contains(event.target)) {
-            servicesSubmenu.classList.remove('active'); // Close submenu if clicked outside
+            servicesSubmenu.style.display = 'none';
         }
     });
 
@@ -25,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('#services-submenu li').forEach((item, index) => {
         item.addEventListener('click', (event) => {
             event.stopPropagation(); // Prevent event from propagating
-            servicesSubmenu.classList.remove('active'); // Close the submenu after selection
+            servicesSubmenu.style.display = 'none'; // Close the submenu after selection
             showCard(`service-card-${index + 1}`); // Show the corresponding card
         });
     });
