@@ -57,7 +57,7 @@ body {
 }
 
 #services-submenu.active {
-    display: block; /* Show the submenu when it has the 'active' class */
+    display: none; /* Show the submenu when it has the 'active' class */
 }
 
 #services-submenu li {
