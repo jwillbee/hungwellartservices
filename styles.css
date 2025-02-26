@@ -44,7 +44,7 @@ body {
 
 /* Submenu */
 #services-submenu {
-    display: none; /* Ensure submenu starts hidden */
+    display: none; /* Start hidden */
     position: absolute;
     top: 40px; /* Align below the menu item */
     left: 0;
@@ -58,9 +58,10 @@ body {
 
 /* Show submenu when active */
 #services-submenu.active {
-    display: block;
+    display: block !important; /* Ensure it's visible */
 }
 
+/* Submenu items */
 #services-submenu li {
     display: block;
     padding: 10px;
