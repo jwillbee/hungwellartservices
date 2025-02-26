@@ -84,5 +84,5 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    max-width: 80%; /* Limit card width for better mobile display */
+    max-width: 95%; /* Limit card width for better mobile display */
 }
