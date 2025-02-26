@@ -7,15 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle Services Submenu visibility on Services Menu click
     servicesMenu.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent click from propagating to document
-        const isActive = servicesSubmenu.classList.contains('active');
-
-        // Close all submenus before toggling
-        document.querySelectorAll('.submenu').forEach(menu => menu.classList.remove('active'));
-
-        if (!isActive) {
-            servicesSubmenu.classList.add('active'); // Open submenu
-        }
+        event.stopPropagation(); // Prevent click from propagating
+        servicesSubmenu.classList.toggle('active');
     });
 
     // Close submenu when clicking outside
