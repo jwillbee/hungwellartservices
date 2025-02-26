@@ -93,7 +93,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh; /* Cover the entire viewport */
-    background-image: url('hungwell_logo.png'); /* Replace with your image path */
+    background-image: url('public/hungwell_logo.png'); /* Replace with your image path */
     background-size: cover; /* Cover the entire area */
     background-repeat: no-repeat;
     z-index: 1; /* Place it behind other content */
