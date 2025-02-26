@@ -40,6 +40,7 @@ body {
     margin: 0 20px;
     font-size: 1.2em;
     cursor: pointer;
+    position: relative; /* Added relative positioning */
 }
 
 #services-submenu {
@@ -51,6 +52,7 @@ body {
     padding: 10px;
     list-style: none;
     margin: 0;
+    z-index: 4; /* Added z-index */
 }
 
 #services-submenu li {
