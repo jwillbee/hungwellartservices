@@ -44,7 +44,7 @@ body {
 
 /* Submenu */
 #services-submenu {
-    display: none;
+    display: none; /* Initially hide the submenu */
     position: absolute;
     top: 40px;
     left: 0;
@@ -53,11 +53,10 @@ body {
     list-style: none;
     min-width: 150px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    flex-direction: column; /* Ensure submenu items are vertically aligned */
 }
 
 #services-submenu.active {
-    display: block;
+    display: block; /* Show the submenu when it has the 'active' class */
 }
 
 #services-submenu li {
