@@ -22,14 +22,12 @@ loader.load('assets/logo.glb', function (gltf) {
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
-
 camera.position.z = 5;
 
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
-
 animate();
 
 // Menu and Card Logic
@@ -42,48 +40,40 @@ const servicesCard = document.getElementById('services-card');
 const aboutUsCard = document.getElementById('about-us-card');
 const contactUsCard = document.getElementById('contact-us-card');
 
-// Dynamic Margin for Content Area
 const menuTray = document.getElementById('menu-tray');
-const menuHeight = menuTray.offsetHeight;
 
-const contentArea = document.createElement('div');
-contentArea.id = 'content-area';
-document.body.insertBefore(contentArea, menuTray.nextSibling);
-
-const sceneContainer = document.getElementById('scene-container');
-contentArea.appendChild(sceneContainer);
-
-contentArea.style.marginTop = `${menuHeight}px`;
-
-// Menu Event Listeners
+// Toggle Submenu
 servicesMenu.addEventListener('click', (event) => {
     event.stopPropagation();
-    servicesSubmenu.style.display = servicesSubmenu.style.display === 'block' ? 'none' : 'block';
+    servicesSubmenu.classList.toggle('active');
 });
 
-// Create service sub-cards and link them to submenu items
+// Hide submenu when clicking outside
+document.addEventListener('click', (event) => {
+    if (!servicesMenu.contains(event.target) && !servicesSubmenu.contains(event.target)) {
+        servicesSubmenu.classList.remove('active');
+    }
+});
+
+// Create service sub-cards
 const serviceSubCards = [];
-function createServiceSubCards() {
-    const serviceSubmenuItems = servicesSubmenu.querySelectorAll('li');
-    serviceSubmenuItems.forEach((item, index) => {
-        const card = document.createElement('div');
-        card.classList.add('card', 'service-sub-card');
-        card.id = `service-sub-card-${index + 1}`;
-        card.innerHTML = `<h2>${item.textContent}</h2><p>Placeholder content for ${item.textContent}.</p>`;
-        document.getElementById('card-container').appendChild(card);
-        serviceSubCards.push(card);
+const serviceSubmenuItems = servicesSubmenu.querySelectorAll('li');
+serviceSubmenuItems.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.classList.add('card', 'service-sub-card');
+    card.id = `service-sub-card-${index + 1}`;
+    card.innerHTML = `<h2>${item.textContent}</h2><p>Placeholder content for ${item.textContent}.</p>`;
+    document.getElementById('card-container').appendChild(card);
+    serviceSubCards.push(card);
 
-        item.addEventListener('click', (event) => {
-            event.stopPropagation();
-            servicesSubmenu.style.display = 'none';
-            showCard(serviceSubCards[index]);
-        });
+    item.addEventListener('click', (event) => {
+        event.stopPropagation();
+        servicesSubmenu.classList.remove('active');
+        showCard(serviceSubCards[index]);
     });
-}
+});
 
-// Call the function to create cards after the submenu is available
-createServiceSubCards();
-
+// Open cards
 aboutUsMenu.addEventListener('click', (event) => {
     event.stopPropagation();
     showCard(aboutUsCard);
@@ -105,48 +95,18 @@ function showCard(card) {
 }
 
 function hideOtherCards(currentCard) {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
+    document.querySelectorAll('.card').forEach(card => {
         if (card !== currentCard) {
             card.style.display = 'none';
         }
     });
 }
 
-function hideCard(card) {
-    card.style.display = 'none';
-}
-
-// Contact Form Submission (Placeholder)
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    // ... (Your form submission logic here) ...
-    contactForm.reset();
-    hideCard(contactUsCard); // Hide after "submission"
-});
-
-// Close Card Event Listener (Improved)
+// Close Cards when clicking outside
 document.addEventListener('click', (event) => {
     if (!menuTray.contains(event.target)) {
-        const cardContainer = document.getElementById('card-container');
-        if (!cardContainer.contains(event.target)) {
-            document.querySelectorAll('.card').forEach(card => {
-                hideCard(card);
-            });
-        }
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.display = 'none';
+        });
     }
-});
-
-// Close Buttons for Cards
-const cards = document.querySelectorAll('.card');
-cards.forEach(card => {
-    const closeButton = document.createElement('button');
-    closeButton.textContent = 'Close';
-    closeButton.classList.add('close-button');
-    closeButton.addEventListener('click', (event) => {
-      event.stopPropagation(); // Prevent card close from bubbling to document
-      hideCard(card);
-    });
-    card.appendChild(closeButton);
 });
