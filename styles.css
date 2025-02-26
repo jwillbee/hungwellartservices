@@ -1,83 +1,60 @@
+/* General Styles */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-}
-
-#scene-container {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to bottom, #87CEEB, #E0F2F7);
-}
-
-/* Main Menu Styling */
-#menu-tray {
-    background-color: rgba(0, 0, 0, 0.8);
+    font-family: Arial, sans-serif;
+    background-color: #111;
     color: white;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
 }
 
-#menu-tray ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* Top-Level Menu */
+#menu {
     display: flex;
-}
-
-#menu-tray ul li {
+    justify-content: center; /* Align menu items horizontally */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
     position: relative;
+    z-index: 10;
+}
+
+.menu-item {
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 16px;
+    position: relative;
+    text-align: center;
 }
 
-#menu-tray ul li:hover {
+.menu-item:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Submenu */
+/* Services Submenu */
 #services-submenu {
-    display: none;
+    display: none; /* Start hidden */
     position: absolute;
-    top: 40px;
+    top: 100%;
     left: 0;
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 0;
+    padding: 10px;
     list-style: none;
-    min-width: 150px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-#services-submenu.active {
-    display: block;
+    margin: 0;
+    z-index: 4;
+    width: 150px; /* Adjust width */
 }
 
 #services-submenu li {
     padding: 10px;
     color: white;
     cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
 }
 
 #services-submenu li:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Card Styling */
-.card {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
+/* Content Display */
+#content {
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
