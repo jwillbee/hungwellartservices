@@ -9,28 +9,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Toggle Services Submenu
     document.getElementById("services-menu").addEventListener("click", (event) => {
         event.stopPropagation();
-        servicesSubmenu.style.display = servicesSubmenu.style.display === "block" ? "none" : "block";
+        const isVisible = servicesSubmenu.style.display === "block";
+        servicesSubmenu.style.display = isVisible ? "none" : "block";
     });
 
     // Hide submenu when clicking outside
     document.addEventListener("click", (event) => {
-        const servicesMenu = document.getElementById("services-menu");
-
-        if (!servicesMenu.contains(event.target) && !servicesSubmenu.contains(event.target)) {
+        if (!event.target.closest("#services-menu") && !event.target.closest("#services-submenu")) {
             servicesSubmenu.style.display = "none";
         }
     });
 
     // Menu Item Click Event
     menuItems.forEach(item => {
-        item.addEventListener("click", () => {
+        item.addEventListener("click", (event) => {
+            event.stopPropagation();
             const section = item.dataset.section;
 
             // Hide submenu when clicking any menu item
             servicesSubmenu.style.display = "none";
 
             // Update content display
-            content.innerHTML = `<h2>${section}</h2><p>Content for ${section} goes here.</p>`;
+            if (section) {
+                content.innerHTML = `<h2>${section}</h2><p>Content for ${section} goes here.</p>`;
+            }
         });
     });
 
