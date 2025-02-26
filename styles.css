@@ -44,7 +44,7 @@ body {
 
 /* Submenu */
 #services-submenu {
-    display: none; /* Initially hide the submenu */
+    display: block; /* Initially hide the submenu */
     position: absolute;
     top: 40px; /* Align vertically below the menu item */
     left: 0;
