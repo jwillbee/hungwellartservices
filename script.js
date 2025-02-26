@@ -7,23 +7,23 @@ const cardContainer = document.getElementById('card-container');
 
 // Toggle Services Submenu
 servicesMenu.addEventListener('click', (event) => {
-    event.stopPropagation();
-    servicesSubmenu.classList.toggle('active');
+    event.stopPropagation();  // Prevent click from propagating to document
+    servicesSubmenu.classList.toggle('active'); // Toggle the submenu visibility
 });
 
 // Close submenu when clicking outside
 document.addEventListener('click', (event) => {
     if (!servicesMenu.contains(event.target) && !servicesSubmenu.contains(event.target)) {
-        servicesSubmenu.classList.remove('active');
+        servicesSubmenu.classList.remove('active'); // Close the submenu if clicked outside
     }
 });
 
 // Handle submenu item clicks
 document.querySelectorAll('#services-submenu li').forEach((item, index) => {
     item.addEventListener('click', (event) => {
-        event.stopPropagation();
-        servicesSubmenu.classList.remove('active');
-        showCard(`service-card-${index + 1}`);
+        event.stopPropagation(); // Prevent event from propagating
+        servicesSubmenu.classList.remove('active'); // Close the submenu after selection
+        showCard(`service-card-${index + 1}`); // Show the corresponding card
     });
 });
 
@@ -40,9 +40,12 @@ contactUsMenu.addEventListener('click', (event) => {
 
 // Show Card Function
 function showCard(cardId) {
+    // Hide all cards first
     document.querySelectorAll('.card').forEach(card => {
         card.style.display = 'none';
     });
+
+    // Show the selected card
     const selectedCard = document.getElementById(cardId);
     if (selectedCard) {
         selectedCard.style.display = 'block';
@@ -53,7 +56,7 @@ function showCard(cardId) {
 document.addEventListener('click', (event) => {
     if (!cardContainer.contains(event.target) && !event.target.closest('.card')) {
         document.querySelectorAll('.card').forEach(card => {
-            card.style.display = 'none';
+            card.style.display = 'none'; // Hide cards if clicked outside
         });
     }
 });
@@ -64,6 +67,6 @@ if (contactForm) {
     contactForm.addEventListener('submit', (event) => {
         event.preventDefault();
         alert('Form submitted successfully!');
-        contactForm.reset();
+        contactForm.reset(); // Reset form fields
     });
 }
