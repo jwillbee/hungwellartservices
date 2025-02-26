@@ -40,7 +40,7 @@ body {
     margin: 0 20px;
     font-size: 1.2em;
     cursor: pointer;
-    position: relative; /* Added relative positioning */
+    position: relative;
 }
 
 #services-submenu {
@@ -52,7 +52,7 @@ body {
     padding: 10px;
     list-style: none;
     margin: 0;
-    z-index: 4; /* Added z-index */
+    z-index: 4;
 }
 
 #services-submenu li {
@@ -132,4 +132,8 @@ body {
     #services-submenu {
         top: 100%;
     }
+}
+
+.service-sub-card {
+    border: 2px solid #ccc;
 }
