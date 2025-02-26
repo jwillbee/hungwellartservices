@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactUsMenu = document.getElementById('contact-us-menu');
     const cardContainer = document.getElementById('card-container');
 
+    // Ensure submenu is hidden on load
+    servicesSubmenu.classList.remove('active');
+
     // Toggle Services Submenu visibility on Services Menu click
     servicesMenu.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent click from propagating
-        servicesSubmenu.classList.toggle('active');
+        event.stopPropagation(); // Prevent event from propagating
+        servicesSubmenu.classList.toggle('active'); // Toggle visibility
     });
 
     // Close submenu when clicking outside
