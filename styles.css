@@ -82,7 +82,7 @@ body {
 }
 
 .card {
-    display: none;
+    display: none; /* Cards are hidden by default */
     position: relative; /* Change to relative positioning */
     top: auto; /* reset top value */
     left: auto; /* reset left value */
@@ -94,6 +94,10 @@ body {
     width: 90%; /* Adjust width for mobile */
     margin: 10px; /* Add margin between cards */
     max-width: 600px; /* added max width to the cards, so they dont take up the entire screen on larger devices*/
+}
+
+#card-container .card[style*="display: block"] {
+    display: block;
 }
 
 @media (min-width: 768px) {
