@@ -73,20 +73,22 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Centered Static Background Image */
 #static-bg-image {
     position: fixed;
     top: 60px;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
     height: calc(100vh - 60px);
     background-image: url('hungwell_logo.png');
     background-size: contain;
     background-repeat: no-repeat;
-    z-index: 1;
     background-position: center;
-    max-width: 60%;
+    z-index: 1;
 }
 
+/* Card Container */
 #card-container {
     z-index: 2;
     position: relative;
@@ -99,9 +101,9 @@ body {
 .card {
     display: none;
     position: absolute;
-    top: calc(10px + 10px); /* Adjust 60px to menu height */
+    top: 60px; /* Directly below the menu */
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%);
     background: white;
     padding: 20px;
     border-radius: 5px;
