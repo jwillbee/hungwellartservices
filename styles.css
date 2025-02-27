@@ -85,10 +85,6 @@ body {
     z-index: 1;
 }
 
-#card-container {
-    z-index: 2;
-    position: relative;
-}
 /* Card Styling */
 .card {
     display: none;
