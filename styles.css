@@ -90,22 +90,24 @@ body {
 
 /* Card Container - Ensures Cards Align Below Menu */
 #card-container {
-    position: relative;
-    top: 60px; /* Ensures cards are below the menu */
+    position: absolute;
+    top: 60px; /* Directly below menu */
+    left: 0;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center them */
     z-index: 2;
 }
 
 /* Card Styling */
 .card {
     display: none;
+    position: relative;
     background: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     width: 90%;
-    margin-top: 10px; /* Spaces cards from the menu */
+    margin-top: 20px; /* Space between menu and card */
 }
