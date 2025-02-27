@@ -99,7 +99,7 @@ body {
 .card {
     display: none;
     position: absolute;
-    top: calc(60px + 10px); /* Adjust 60px to menu height */
+    top: calc(10px + 10px); /* Adjust 60px to menu height */
     left: 50%;
     transform: translate(-50%, 0);
     background: white;
