@@ -80,11 +80,11 @@ body {
     width: 100%;
     height: calc(100vh - 60px);
     background-image: url('hungwell_logo.png');
-    background-size: contain; /* Changed to contain */
+    background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
     background-position: center;
-    max-width: 60%; /* Added max width */
+    max-width: 60%;
 }
 
 #card-container {
@@ -99,7 +99,7 @@ body {
 .card {
     display: none;
     position: absolute;
-    top: calc(50px + 10px);
+    top: calc(60px + 10px); /* Adjust 60px to menu height */
     left: 50%;
     transform: translate(-50%, 0);
     background: white;
