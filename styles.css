@@ -87,7 +87,8 @@ body {
 
 #card-container {
     z-index: 8;
-    position: relative;
+    position: relative
+    top: calc(50px + 10px); /* Position directly below the menu */
     display: flex; /* Ensure it's a flex container */
     flex-wrap: wrap;
     justify-content: center;
