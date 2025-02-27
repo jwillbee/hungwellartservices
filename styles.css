@@ -74,7 +74,7 @@ body {
 }
 
 #static-bg-image {
-    position: absolute;
+    position: relative;
     top: 60px;
     left: 0;
     width: 50vh;
@@ -87,7 +87,7 @@ body {
 
 #card-container {
     z-index: 8;
-    position: absolute;
+    position: relative;
     top: calc(50px + 10px); /* Position directly below the menu */
     display: flex; /* Ensure it's a flex container */
     flex-wrap: wrap;
