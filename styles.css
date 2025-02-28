@@ -76,11 +76,11 @@ body {
 /* Centered Static Background Image */
 #static-bg-image {
     position: fixed;
-    top: 60px;
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
-    width: 75%;
-    height: calc(100vh - 40px);
+    width: 80%;
+    height: calc(100vh - 20px);
     background-image: url('hungwell_logo.png');
     background-size: contain;
     background-repeat: no-repeat;
