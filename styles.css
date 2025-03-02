@@ -15,6 +15,9 @@ body {
 #menu-tray {
     background-color: rgba(0, 0, 0, 0);
     color: white;
+    font-family: 'Impact';
+    font-size: 16px;
+    text-shadow: 2px 2px 2px black;
     padding: 10px 0;
     position: fixed;
     top: 0;
