@@ -120,3 +120,20 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Auto-responsive grid */
+    gap: 10px; /* Space between items */
+    padding: 0;
+    list-style: none;
+}
+
+.grid-list li {
+    background: #3498db;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
